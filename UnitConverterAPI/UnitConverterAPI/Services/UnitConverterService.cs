@@ -1,5 +1,4 @@
 ﻿using UnitConverterAPI.Converters;
-using UnitConverterAPI.Models;
 
 namespace UnitConverterAPI.Services;
 

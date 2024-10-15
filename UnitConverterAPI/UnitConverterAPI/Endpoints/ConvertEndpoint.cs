@@ -9,7 +9,8 @@ public static class ConvertEndpoint
     {
         app.MapPost("/convert", ConvertUnitHandler);
 
-        static IResult ConvertUnitHandler(HttpContext context, ConvertRequestDto req, UnitConverterService converterService)
+        static IResult ConvertUnitHandler(HttpContext context,
+        ConvertRequestDto req, UnitConverterService converterService)
         {
             if (req.UnitType is null)
                 return TypedResults.BadRequest(new { Error = "Must provide a 'UnitType' value." });
