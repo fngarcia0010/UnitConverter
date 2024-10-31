@@ -69,6 +69,8 @@ export default function App() {
     } else {
       setSelectedUnitValues(null);
     }
+
+    setConvertionResult(null);
   }, [selectedUnit]);
 
   return (
@@ -76,27 +78,28 @@ export default function App() {
       <div className={styles.header}>
         <h2>Unit Converter</h2>
         <p>
-          This unit converter is cool. This unit converter is cool. This unit
-          converter is cool.
+          Convert between units of length, temperature, and weight with ease.
+          This app provides a quick, accurate conversion by selecting your unit
+          type and values, with results displayed instantly.
         </p>
       </div>
       <div className={styles.units}>
         {units ? (
-          <ul>
+          <ul className={styles.unitsContainer}>
             <li>
-              <span className={styles.unitName}>Length</span>{" "}
+              <span className={styles.unitName}>Lengths</span>{" "}
               <span className={styles.unitValue}>
                 {units?.length.join(", ")}
               </span>
             </li>
             <li>
-              <span className={styles.unitName}>Temperature</span>{" "}
+              <span className={styles.unitName}>Temperatures</span>{" "}
               <span className={styles.unitValue}>
                 {units?.temperature.join(", ")}
               </span>
             </li>
             <li>
-              <span className={styles.unitName}>Weigth</span>{" "}
+              <span className={styles.unitName}>Weights</span>{" "}
               <span className={styles.unitValue}>
                 {units?.weight.join(", ")}
               </span>
@@ -107,8 +110,10 @@ export default function App() {
         )}
       </div>
       <div className={styles.converter}>
-        <div>
+        <div className={styles.selectContainer}>
+          <label htmlFor="units">Units</label>
           <select
+            id="units"
             onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
               setSelectedUnit(e.target.value as Unit)
             }
@@ -119,52 +124,59 @@ export default function App() {
             <option value="weight">Weight</option>
           </select>
         </div>
-        <div>
-          <h3>Convert from</h3>
-          {selectedUnitValues && (
-            <select
-              onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
-                setConvertFrom(e.target.value)
-              }
-            >
-              <option value="">Choose value</option>
-              {selectedUnitValues &&
-                selectedUnitValues.map((u) => <option key={u}>{u}</option>)}
-            </select>
-          )}
-        </div>
-        <div>
-          <h3>Value</h3>
-          <input
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setValueToConvert(Number(e.target.value))
-            }
-            type="number"
-          />
-        </div>
-        <div>
-          <h3>Convert To</h3>
-          {selectedUnitValues && (
-            <select
-              onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
-                setConvertTo(e.target.value)
-              }
-            >
-              <option value="">Choose value</option>
-              {selectedUnitValues &&
-                selectedUnitValues.map((u) => <option key={u}>{u}</option>)}
-            </select>
-          )}
-        </div>
 
-        <button onClick={handleConvertion}>Convert!</button>
+        {selectedUnitValues && (
+          <>
+            <div className={styles.valueContainer}>
+              <label htmlFor="value">Value</label>
+              <input
+                id="value"
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                  setValueToConvert(Number(e.target.value))
+                }
+                type="number"
+              />
+            </div>
+
+            <div className={styles.convertValue}>
+              <label htmlFor="convertFrom">From</label>
+              <select
+                id="convertFrom"
+                onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
+                  setConvertFrom(e.target.value)
+                }
+              >
+                <option value="">Choose value</option>
+                {selectedUnitValues &&
+                  selectedUnitValues.map((u) => <option key={u}>{u}</option>)}
+              </select>
+            </div>
+
+            <div className={styles.convertValue}>
+              <label htmlFor="convertTo">To</label>
+              <select
+                id="convertTo"
+                onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
+                  setConvertTo(e.target.value)
+                }
+              >
+                <option value="">Choose value</option>
+                {selectedUnitValues &&
+                  selectedUnitValues.map((u) => <option key={u}>{u}</option>)}
+              </select>
+            </div>
+
+            <button className={styles.convertBtn} onClick={handleConvertion}>
+              Convert
+            </button>
+          </>
+        )}
 
         {convertionResult && (
-          <div>
-            <h3>Result</h3>
-            <p>
+          <div className={styles.result}>
+            <span>
               {convertionResult.convertedValue} {convertionResult.to}
-            </p>
+            </span>
           </div>
         )}
       </div>
