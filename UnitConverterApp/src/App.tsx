@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 
+import { API_ENDPOINT } from "./endpoints";
+import axios from "axios";
 import styles from "./styles/styles.module.css";
+
+type Unit = "" | "length" | "temperature" | "weight";
 
 interface UnitList {
   length: string[];
   temperature: string[];
   weight: string[];
 }
-
-type Unit = "" | "length" | "temperature" | "weight";
 
 interface ConvertionResult {
   unitType: string;
@@ -33,7 +34,7 @@ export default function App() {
 
   const handleConvertion = async () => {
     try {
-      const { data } = await axios.post("http://localhost:5000/convert", {
+      const { data } = await axios.post(`${API_ENDPOINT}/convert`, {
         UnitType: selectedUnit,
         Value: valueToConvert,
         From: convertFrom,
@@ -53,7 +54,7 @@ export default function App() {
       if (storedData) {
         setUnits(JSON.parse(storedData));
       } else {
-        const { data } = await axios.get("http://localhost:5000/units");
+        const { data } = await axios.get(`${API_ENDPOINT}/units`);
         setUnits(data);
         localStorage.setItem("units", JSON.stringify(data));
       }
@@ -69,8 +70,6 @@ export default function App() {
       setSelectedUnitValues(null);
     }
   }, [selectedUnit]);
-
-  console.log(selectedUnitValues);
 
   return (
     <div className={styles.root}>
