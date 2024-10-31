@@ -23,7 +23,7 @@ public static class ConvertEndpoint
 
             try
             {
-                decimal convertedValue = converterService.ConvertUnit(req.UnitType, req.Value, req.From, req.To);
+                var convertedValue = converterService.ConvertUnit(req.UnitType, req.Value, req.From, req.To);
 
                 ConvertResponseDto response = new()
                 {
