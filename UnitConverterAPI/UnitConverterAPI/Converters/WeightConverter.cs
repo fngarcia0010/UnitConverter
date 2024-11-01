@@ -16,7 +16,7 @@ public class WeightConverter
 
         return to switch
         {
-            "kg" => value,
+            "kg" => valueInKg,
             "g" => Math.Round(valueInKg / 0.001m, 2),
             "t" => valueInKg / 1000,
             "lb" => Math.Round(valueInKg / 0.453592m, 2),
