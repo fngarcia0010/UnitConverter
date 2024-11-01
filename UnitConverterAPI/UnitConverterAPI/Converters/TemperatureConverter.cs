@@ -7,7 +7,7 @@ public class TemperatureConverter
         decimal valueInCelsius = from switch
         {
             "C" => value,
-            "F" => (value - 32) * 5 / 9,
+            "F" => Math.Round((value - 32) * 5 / 9, 2),
             "K" => Math.Round(value - 273.15m, 2),
             _ => throw new ArgumentException("Unknown unit of temperature (From).")
         };
