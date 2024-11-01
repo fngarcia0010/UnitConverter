@@ -313,10 +313,13 @@ input[type="number"] {
 }
 
 .result > p {
-  color: #d98b4e;
-  font-weight: bold;
+  font-size: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 30px;
 }
 
-.result > span {
-  font-size: 4rem;
+.result > p > span {
+  font-weight: 100;
+  color: #d98b4e;
 }

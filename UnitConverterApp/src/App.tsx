@@ -154,9 +154,10 @@ export default function App() {
 
         {convertionResult && (
           <div className={styles.result}>
-            <span>
+            <p>
+              <span>≈</span>
               {convertionResult.convertedValue} {convertionResult.to}
-            </span>
+            </p>
           </div>
         )}
       </div>
