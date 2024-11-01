@@ -23,14 +23,11 @@ interface ConvertionResult {
 export default function App() {
   const [units, setUnits] = useState<UnitList | null>(null);
   const [selectedUnit, setSelectedUnit] = useState<Unit>("");
-  const [selectedUnitValues, setSelectedUnitValues] = useState<
-    string[] | null
-  >();
+  const [selectedUnitValues, setSelectedUnitValues] = useState<string[] | null>();
   const [valueToConvert, setValueToConvert] = useState<number | null>(null);
   const [convertFrom, setConvertFrom] = useState("");
   const [convertTo, setConvertTo] = useState("");
-  const [convertionResult, setConvertionResult] =
-    useState<ConvertionResult | null>(null);
+  const [convertionResult, setConvertionResult] = useState<ConvertionResult | null>(null);
 
   const handleConvertion = async () => {
     try {
@@ -78,9 +75,8 @@ export default function App() {
       <div className={styles.header}>
         <h2>Unit Converter</h2>
         <p>
-          Convert between units of length, temperature, and weight with ease.
-          This app provides a quick, accurate conversion by selecting your unit
-          type and values, with results displayed instantly.
+          Convert between units of length, temperature, and weight with ease. This app provides a quick, accurate
+          conversion by selecting your unit type and values, with results displayed instantly.
         </p>
       </div>
       <div className={styles.units}>
@@ -88,21 +84,15 @@ export default function App() {
           <ul className={styles.unitsContainer}>
             <li>
               <span className={styles.unitName}>Lengths</span>{" "}
-              <span className={styles.unitValue}>
-                {units?.length.join(", ")}
-              </span>
+              <span className={styles.unitValue}>{units?.length.join(", ")}</span>
             </li>
             <li>
               <span className={styles.unitName}>Temperatures</span>{" "}
-              <span className={styles.unitValue}>
-                {units?.temperature.join(", ")}
-              </span>
+              <span className={styles.unitValue}>{units?.temperature.join(", ")}</span>
             </li>
             <li>
               <span className={styles.unitName}>Weights</span>{" "}
-              <span className={styles.unitValue}>
-                {units?.weight.join(", ")}
-              </span>
+              <span className={styles.unitValue}>{units?.weight.join(", ")}</span>
             </li>
           </ul>
         ) : (
@@ -114,9 +104,7 @@ export default function App() {
           <label htmlFor="units">Units</label>
           <select
             id="units"
-            onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
-              setSelectedUnit(e.target.value as Unit)
-            }
+            onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setSelectedUnit(e.target.value as Unit)}
           >
             <option value="">Select Unit</option>
             <option value="length">Length</option>
@@ -131,9 +119,7 @@ export default function App() {
               <label htmlFor="value">Value</label>
               <input
                 id="value"
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  setValueToConvert(Number(e.target.value))
-                }
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setValueToConvert(Number(e.target.value))}
                 type="number"
               />
             </div>
@@ -142,13 +128,10 @@ export default function App() {
               <label htmlFor="convertFrom">From</label>
               <select
                 id="convertFrom"
-                onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
-                  setConvertFrom(e.target.value)
-                }
+                onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setConvertFrom(e.target.value)}
               >
                 <option value="">Choose value</option>
-                {selectedUnitValues &&
-                  selectedUnitValues.map((u) => <option key={u}>{u}</option>)}
+                {selectedUnitValues && selectedUnitValues.map((u) => <option key={u}>{u}</option>)}
               </select>
             </div>
 
@@ -156,13 +139,10 @@ export default function App() {
               <label htmlFor="convertTo">To</label>
               <select
                 id="convertTo"
-                onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
-                  setConvertTo(e.target.value)
-                }
+                onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setConvertTo(e.target.value)}
               >
                 <option value="">Choose value</option>
-                {selectedUnitValues &&
-                  selectedUnitValues.map((u) => <option key={u}>{u}</option>)}
+                {selectedUnitValues && selectedUnitValues.map((u) => <option key={u}>{u}</option>)}
               </select>
             </div>
 
