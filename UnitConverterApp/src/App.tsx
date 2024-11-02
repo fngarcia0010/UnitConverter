@@ -74,10 +74,7 @@ export default function App() {
     <div className={styles.root}>
       <div className={styles.header}>
         <h2>Unit Converter</h2>
-        <p>
-          Convert between units of length, temperature, and weight with ease. This app provides a quick, accurate
-          conversion by selecting your unit type and values, with results displayed instantly.
-        </p>
+        <p>Convert between units of length, temperature, and weight.</p>
       </div>
       <div className={styles.units}>
         {units ? (
