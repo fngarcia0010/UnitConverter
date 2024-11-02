@@ -1,6 +1,6 @@
 # UnitConverterAPI
 
-This is a unit convertion app. You can convert length, weight or temperature units, for example, you could convert `2500` centimeters (`cm`) to meters (`m`) to obtain `25 m`.
+This is a unit conversion app that allows you to convert length, weight, or temperature units. For example, you could convert `2500` centimeters (`cm`) to `meters` (`m`) to obtain `25 m`.
 
 ## Screenshot
 
@@ -21,16 +21,16 @@ This is a unit convertion app. You can convert length, weight or temperature uni
 
 ### Install dependencies
 
-- The API project installs and build the project automatically when starting it.
-- Install dependencies in the React app `UnitConverterApp` running `npm i` in the command line.
+- The API project automatically installs and builds itself upon starting.
+- For the React app (`UnitConverterApp`), install dependencies by running `npm i`.
 
 ### Run locally
 
 - API
-  - Inside `UnitConverterAPI/UnitConverterAPI` folder enter `dotnet run` in the command line.
+  - From the `UnitConverterAPI/UnitConverterAPI` directory, run `dotnet run`.
 - React App
-  - Inside `UnitConverterApp` folder enter `npm run dev` in the command line.
-- Run API Tests located in `UnitConverterAPI/UnitConverterAPI.Tests` running `dotnet test` in the command line.
+  - From the `UnitConverterApp` directory, run `npm run dev`.
+- Tests are located in `UnitConverterAPI/UnitConverterAPI.Tests`. Run them with `dotnet test`.
 
 ##
 
@@ -39,7 +39,7 @@ This is a unit convertion app. You can convert length, weight or temperature uni
 - `/units` - Get Available Units
 
   - Method: `GET`
-  - Description: Returns lists of units available for each type of measurement (length, weight and temperature).
+  - Description: Returns lists of units available for each type (length, weight and temperature).
   - Response:
 
   ```json
@@ -82,12 +82,12 @@ This is a unit convertion app. You can convert length, weight or temperature uni
 ### Services and Converters
 
 - `UnitsService`: Provides lists of available units
-- `UnitConvertionService`: Handles conversion based on unit type.
+- `UnitConversionService`: Handles conversion based on unit type.
 - `Converters`: Specific converters for `Length`, `Weight`, and `Temperature` handle unit conversions and errors for unsupported units.
 
 ## Unit Tests
 
-Unit tests (`xunit`) are available for validating conversions in the following categories.
+Unit tests (`xUnit`) are available for validating conversions.
 
 - Length Conversion Tests (`LengthConverterConvertLength`)
 
