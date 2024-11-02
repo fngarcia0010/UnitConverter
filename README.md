@@ -60,10 +60,10 @@ I coded this app as a learning project, demonstrating how to connect a React fro
 
   ```json
   {
-    "unitType": "length", // Type of measurement (e.g., "length", "weight", "temperature")
-    "value": 100, // Numeric value to convert
-    "from": "m", // Unit to convert from
-    "to": "km" // Unit to convert to
+    "unitType": "length",
+    "value": 100,
+    "from": "m",
+    "to": "km"
   }
   ```
 
