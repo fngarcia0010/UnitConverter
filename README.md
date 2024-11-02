@@ -1,4 +1,4 @@
-# UnitConverterAPI
+# UnitConverter
 
 This is a unit conversion app that allows you to convert length, weight, or temperature units. For example, you could convert `2500` centimeters (`cm`) to `meters` (`m`) to obtain `25 m`.
 
