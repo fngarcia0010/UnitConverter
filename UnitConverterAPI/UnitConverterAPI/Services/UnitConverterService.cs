@@ -7,6 +7,8 @@ public class UnitConverterService
     public decimal ConvertUnit(string unitType, decimal value, string from, string to)
     {
         unitType = unitType.ToLower();
+        from = from.ToLower();
+        to = to.ToLower();
         
         return unitType switch
         {
