@@ -10,9 +10,9 @@ I coded this app as a learning project, demonstrating how to connect a React fro
 
 ## Features
 
-- **Real-Time Unit Conversion**: Choose a unit type (length, temperature, or weight), specify the source and target units, and input a value to instantly see the converted result.
-- **Local Storage Caching**: Unit lists are cached in local storage, minimizing API calls for an efficient user experience.
-- **Error Handling and Testing**: The application incorporates unit testing using xUnit for backend validation, ensuring conversion logic accuracy across various scenarios.
+- **Real-Time Unit Conversion**: Choose a unit type (length, temperature, or weight), specify the source and target units, and input a value to see the converted result.
+- **Local Storage Caching**: Unit lists are cached in local storage, reducing API calls.
+- **Error Handling and Testing**: xUnit for backend validation.
 
 ## Requirements
 
