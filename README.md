@@ -12,12 +12,12 @@ This is a unit convertion app. You can convert length, weight or temperature uni
 - **Local Storage Caching**: Unit lists are cached in local storage, reducing API calls.
 - **Error Handling and Testing**: xUnit for backend validation.
 
-## Requirements
+## Setup
+
+### Requirements
 
 - [.NET SDK](https://dotnet.microsoft.com/en-us/download) to run the API.
 - [NodeJS](https://nodejs.org/en) to run the client app.
-
-## Setup
 
 ### Install dependencies
 
