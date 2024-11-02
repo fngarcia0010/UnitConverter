@@ -2,8 +2,6 @@
 
 This is a unit convertion app. You can convert length, weight or temperature units, for example, you could convert `2500` centimeters (`cm`) to meters (`m`) to obtain `25 m`.
 
-I coded this app as a learning project, demonstrating how to connect a React frontend with a backend built using ASP.NET Minimal APIs.
-
 ## Screenshot
 
 ![screenshot](./unitconverter_screenshot.png)
